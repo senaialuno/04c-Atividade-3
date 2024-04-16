@@ -1,5 +1,6 @@
 using Exo.WebApi.Models;
-using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.Sql;
 
 namespace Exo.WebApi.Contexts
 
@@ -14,9 +15,9 @@ namespace Exo.WebApi.Contexts
         }
         protected override void OnConfiguring(DbContextOptionsBuilder OptionsBuilder)
         {
-            if(!optionsBuilder.IsConfigured)
+            if(!OptionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-T23FVCA\\SQLEXPRESS;" + "Database=ExoApi;Trusted_Connection=True;");
+                OptionsBuilder.UseSqlServer("Server=DESKTOP-T23FVCA\\SQLEXPRESS;" + "Database=ExoApi;Trusted_Connection=True;");
             }
         }
         public DbSet<Projeto> Projetos {get; set;}
