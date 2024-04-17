@@ -20,6 +20,7 @@ namespace Exo.WebApi.Contexts
                 OptionsBuilder.UseSqlServer("Server=DESKTOP-T23FVCA\\SQLEXPRESS;" + "Database=ExoApi;Trusted_Connection=True;");
             }
         }
-        public DbSet<Projeto> Projetos {get; set;}
-    }
+        public DbSet<Projeto> Projetos { get; set; }
+        public DbSet<Usuario> usuarios { get; set; }
+     }
 }

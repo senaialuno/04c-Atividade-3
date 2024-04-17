@@ -6,7 +6,7 @@ using RouteAttribute = Microsoft.AspNetCore.Components.RouteAttribute;
 
 namespace Exo.WebApi.Contollers
 {
-    [Route("Api/Controller")]
+    [Route("Api/[Controller]")]
     [ApiController]
     public class ProjetosController : ControllerBase
     {
@@ -51,7 +51,7 @@ namespace Exo.WebApi.Contollers
                 _projetoRepository.Deletar(id);
                 return StatusCode(204);
             }
-            catch (Exception e)
+            catch (Exception s)
             {
                 return BadRequest();
             }
